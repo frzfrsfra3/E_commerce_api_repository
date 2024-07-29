@@ -34,6 +34,12 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(200);
-        $response->assertJsonStructure(['token']);
+  
+        $response->assertStatus(200)
+        ->assertJsonStructure([
+            'data' => [
+                'token'
+            ]
+        ]);
     }
 }
