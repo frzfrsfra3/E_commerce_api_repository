@@ -1,0 +1,23 @@
+<?php 
+
+namespace App\Repositories;
+
+use App\Contracts\UserRepositoryInterface;
+use App\Models\User;
+
+class UserRepository implements UserRepositoryInterface
+{
+    // public function create(array $data)
+    // {
+    //     return User::create($data);
+    // }
+    // public function create(array $data): User;
+    public function create(array $data): User
+    {
+        return User::create($data);
+    }
+    public function findByEmail(string $email)
+    {
+        return User::where('email', $email)->first();
+    }
+}
